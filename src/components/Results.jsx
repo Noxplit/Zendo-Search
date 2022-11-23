@@ -15,14 +15,13 @@ const Results = () => {
 	}, [search])
 	const response = results?.webPages?.value
   const img = image?.contents
-console.log(img);
 	if (isLoading) return <Lodaing />
 
   switch (location.pathname) {
     case '/search':
       return (	<div className='grid sm:grid-cols-2 grid-cols-1   justify-start items-start flex-wrap py-5 gap-20'>
 			{response?.map((value) => (
-				<div className='flex flex-col  justify-center  items-start gap-2'>
+				<div key={value?.displayUrl} className='flex flex-col  justify-center  items-start gap-2'>
 					<div className='text-sm'>{value?.displayUrl}</div>
 
 					<a href={value?.url}>
@@ -36,7 +35,7 @@ console.log(img);
 case '/videos': return (
  <div className='flex justify-around items-center flex-wrap py-5 gap-20'>
   {img?.map((value) => (
-    <div className='flex flex-col  justify-center  items-center gap-2 hover:scale-105 ease-in duration-300'>
+    <div key={value?.video?.videoId} className='flex flex-col  justify-center  items-center gap-2 hover:scale-105 ease-in duration-300'>
     <ReactPlayer url={`https://www.youtube.com/watch?v=${value?.video?.videoId}`}/>
     </div>
   ))}
@@ -45,9 +44,9 @@ case '/videos': return (
   
     default:
       return (	<div className='flex justify-around items-center flex-wrap py-5 gap-20'>
-			{img?.map((value) => (
-				<div className='flex flex-col  justify-center  items-center gap-2 hover:scale-105 ease-in duration-300'>
-				<a href={value.thumbnailUrl}><img src={value?.video?.thumbnails[0]?.url}  className='w-[400px] rounded-2xl cursor-pointer ' /></a>
+			{img?.map((value, id) => (
+				<div key={id} className='flex flex-col  justify-center  items-center gap-2 hover:scale-105 ease-in duration-300'>
+				<a href={value?.thumbnailUrl}><img src={value?.video?.thumbnails[0]?.url}  className='w-[400px] rounded-2xl cursor-pointer ' /></a>
 				</div>
 			))}
 		</div>);

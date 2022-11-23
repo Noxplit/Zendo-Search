@@ -1,9 +1,11 @@
-import { Box } from '@mui/material'
 import React from 'react'
 
 const Footer = () => {
   return (
-<div></div>
+<div>
+<div className='text-center'>2022 Zendo, Create and design by Noxplit</div>
+
+</div>
   )
 }
 
