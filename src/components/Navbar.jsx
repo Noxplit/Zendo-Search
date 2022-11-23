@@ -7,9 +7,9 @@ import Search from './Search';
 const Navbar = ({dark}) => {
   return (
     <div className='flex flex-wrap sm:justify-between justify-around items-center gap-4'>
-      <div className='border-2 p-2 rounded-2xl flex gap-2' >
-      <GraphicEqIcon fontSize='large'/>
-    <Link to='/'><div className='text-4xl'>
+      <div className=' hover:scale-105 ease-in duration-300 rounded-2xl flex gap-2' >
+      <GraphicEqIcon fontSize='large' className='rounded-full'/>
+    <Link to='/'><div className='text-4xl overflow-y-hidden'>
       ZENDO</div>
       </Link>
       </div>

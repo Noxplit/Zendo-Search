@@ -10,6 +10,7 @@ const [results, setResults] = useState([])
 const [isLoading, setLoading] = useState(false)
 const [search, setSearch] = useState('')
 const [image, setImage] = useState([])
+const [darkTheme, setDarkTheme] = useState(false)
 
 const getResult = async (type) => {
   setLoading(true)
@@ -46,7 +47,7 @@ const getImage = async (type) => {
 
 
 return (
-  <ResultContext.Provider value={{getResult, getImage, image, results, search, setSearch, isLoading}}>
+  <ResultContext.Provider value={{getResult, darkTheme, setDarkTheme, getImage, image, results, search, setSearch, isLoading}}>
 {children}
   </ResultContext.Provider>
 )

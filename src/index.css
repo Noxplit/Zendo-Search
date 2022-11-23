@@ -4,14 +4,19 @@
 
 * {
   overflow-x: hidden;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 @layer base {
   *{
-    @apply bg-gray-100 dark:bg-gray-900
+    @apply bg-gray-100 dark:bg-zinc-800
   }
   button {
     @apply border-2 p-4 rounded-2xl
   }
+
+  p {
+    @apply overflow-y-hidden
+  }
+ 
 }

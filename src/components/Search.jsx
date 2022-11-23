@@ -19,7 +19,7 @@ useEffect(()=> {
   
   return (
    <div className='flex justify-star  items-center'>
-    <input placeholder='Enter your request...' value={text} onChange={e => setText(e.target.value)} className='sm:w-[500px] w-[400px] p-2 rounded-3xl text-black dark:text-white   dark:bg-gray-700 pl-5  ' type="text" />
+    <input placeholder='Enter your request...' value={text} onChange={e => setText(e.target.value)} className='sm:w-[500px] w-[400px] p-2 rounded-3xl bg-gray-200  text-black dark:text-white   dark:bg-zinc-600 pl-5  ' type="text" />
    {!search.length > 0 ? <SearchIcon  className='cursor-pointer' fontSize='large'/>  :  <ClearIcon className='cursor-pointer' fontSize='large' onClick={() => setText('')} /> } 
    
    </div>
